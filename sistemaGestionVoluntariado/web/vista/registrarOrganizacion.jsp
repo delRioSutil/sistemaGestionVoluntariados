@@ -21,6 +21,6 @@
             <s:textfield name="nif" label="NIF"></s:textfield>
             <s:submit value="registrar"></s:submit>
         </s:form>
-        <%-- hola--%>
+     
     </body>
 </html>
