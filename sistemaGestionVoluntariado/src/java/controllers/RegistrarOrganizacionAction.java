@@ -7,9 +7,8 @@ package controllers;
 
 import com.opensymphony.xwork2.ActionSupport;
 import entidades.Organizacion;
-import serviceClients.OrganizacionJerseyClient;
 import org.apache.commons.codec.digest.DigestUtils;
-
+import cliente.OrganizacionClient;
 /**
  *
  * @author usuario
@@ -34,7 +33,7 @@ public class RegistrarOrganizacionAction extends ActionSupport {
         org.setContrasenya(hashed);
         org.setEventoCollection(null);
         //Instanciamos cliente para usar servicio web de base de datos
-        OrganizacionJerseyClient client1=new OrganizacionJerseyClient();
+        OrganizacionClient client1=new OrganizacionClient();
         client1.create_XML(org);
         return SUCCESS;
     }
