@@ -14,9 +14,16 @@
     </head>
     <body>
         <h1>Introduce tus datos</h1>
-        <s:form action="/organizacion/registrarOrg">
-            <s:textfield name="username" label="Nombre de usuario"></s:textfield>
+        <s:form action="/organizacion/loginOrg">
+            <s:textfield name="nif" label="NIF"></s:textfield>
             <s:password name="password" label="contraseña"></s:password>
+            <s:submit value="iniciar"></s:submit>
         </s:form>
+
+        <s:if test="mensaje != null">
+            <div style="color:red;">
+                <s:property value="mensaje" />
+            </div>
+        </s:if>
     </body>
 </html>

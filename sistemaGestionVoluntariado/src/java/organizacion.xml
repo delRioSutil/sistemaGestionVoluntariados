@@ -13,6 +13,20 @@
             <result name="success">/vista/registrarOrganizacion.jsp</result>
             <result name="input">/vista/registrarOrganizacion.jsp</result>
         </action>
+        
+        <action name="loginOrg" class="controllers.loginOrganizacionAction">
+            <result name="success">/vista/organizacionLogeada.jsp</result>
+            <result name="error">/vista/loginOrganizacion.jsp</result>
+            <result name="input">/vista/loginOrganizacion.jsp</result>
+        </action>
+        
+        <action name="accederRegistroOrg">
+            <result>/vista/registrarOrganizacion.jsp</result>
+        </action>
+        
+        <action name="accederLoginOrg">
+            <result>/vista/loginOrganizacion.jsp</result>
+        </action>
     </package>
 </struts>
 

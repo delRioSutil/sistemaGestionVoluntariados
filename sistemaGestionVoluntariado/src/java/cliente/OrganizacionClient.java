@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package serviceClients;
+package cliente;
 
 import javax.ws.rs.ClientErrorException;
 import javax.ws.rs.client.Client;
@@ -15,7 +15,7 @@ import javax.ws.rs.core.GenericType;
  * [entidades.organizacion]<br>
  * USAGE:
  * <pre>
- *        OrganizacionJerseyClient client = new OrganizacionJerseyClient();
+ *        OrganizacionClient client = new OrganizacionClient();
  *        Object response = client.XXX(...);
  *        // do whatever with response
  *        client.close();
@@ -23,13 +23,13 @@ import javax.ws.rs.core.GenericType;
  *
  * @author usuario
  */
-public class OrganizacionJerseyClient {
+public class OrganizacionClient {
 
     private WebTarget webTarget;
     private Client client;
-    private static final String BASE_URI = "http://localhost:29220/sistemaGestionVoluntariado/webresources";
+    private static final String BASE_URI = "http://localhost:29220/SWvoluntariado/webresources";
 
-    public OrganizacionJerseyClient() {
+    public OrganizacionClient() {
         client = javax.ws.rs.client.ClientBuilder.newClient();
         webTarget = client.target(BASE_URI).path("entidades.organizacion");
     }
@@ -48,28 +48,28 @@ public class OrganizacionJerseyClient {
         webTarget.path(java.text.MessageFormat.format("{0}", new Object[]{id})).request(javax.ws.rs.core.MediaType.APPLICATION_JSON).put(javax.ws.rs.client.Entity.entity(requestEntity, javax.ws.rs.core.MediaType.APPLICATION_JSON));
     }
 
-    public <T> T find_XML(GenericType<T> superType, String id) throws ClientErrorException {
+    public <T> T find_XML(GenericType<T> responseType, String id) throws ClientErrorException {
         WebTarget resource = webTarget;
         resource = resource.path(java.text.MessageFormat.format("{0}", new Object[]{id}));
-        return resource.request(javax.ws.rs.core.MediaType.APPLICATION_XML).get(superType);
+        return resource.request(javax.ws.rs.core.MediaType.APPLICATION_XML).get(responseType);
     }
 
-    public <T> T find_JSON(GenericType<T> superType, String id) throws ClientErrorException {
+    public <T> T find_JSON(GenericType<T> responseType, String id) throws ClientErrorException {
         WebTarget resource = webTarget;
         resource = resource.path(java.text.MessageFormat.format("{0}", new Object[]{id}));
-        return resource.request(javax.ws.rs.core.MediaType.APPLICATION_JSON).get(superType);
+        return resource.request(javax.ws.rs.core.MediaType.APPLICATION_JSON).get(responseType);
     }
 
-    public <T> T findRange_XML(GenericType<T> superType, String from, String to) throws ClientErrorException {
+    public <T> T findRange_XML(GenericType<T> responseType, String from, String to) throws ClientErrorException {
         WebTarget resource = webTarget;
         resource = resource.path(java.text.MessageFormat.format("{0}/{1}", new Object[]{from, to}));
-        return resource.request(javax.ws.rs.core.MediaType.APPLICATION_XML).get(superType);
+        return resource.request(javax.ws.rs.core.MediaType.APPLICATION_XML).get(responseType);
     }
 
-    public <T> T findRange_JSON(GenericType<T> superType, String from, String to) throws ClientErrorException {
+    public <T> T findRange_JSON(GenericType<T> responseType, String from, String to) throws ClientErrorException {
         WebTarget resource = webTarget;
         resource = resource.path(java.text.MessageFormat.format("{0}/{1}", new Object[]{from, to}));
-        return resource.request(javax.ws.rs.core.MediaType.APPLICATION_JSON).get(superType);
+        return resource.request(javax.ws.rs.core.MediaType.APPLICATION_JSON).get(responseType);
     }
 
     public void create_XML(Object requestEntity) throws ClientErrorException {
@@ -80,14 +80,14 @@ public class OrganizacionJerseyClient {
         webTarget.request(javax.ws.rs.core.MediaType.APPLICATION_JSON).post(javax.ws.rs.client.Entity.entity(requestEntity, javax.ws.rs.core.MediaType.APPLICATION_JSON));
     }
 
-    public <T> T findAll_XML(GenericType<T> superType) throws ClientErrorException {
+    public <T> T findAll_XML(GenericType<T> responseType) throws ClientErrorException {
         WebTarget resource = webTarget;
-        return resource.request(javax.ws.rs.core.MediaType.APPLICATION_XML).get(superType);
+        return resource.request(javax.ws.rs.core.MediaType.APPLICATION_XML).get(responseType);
     }
 
-    public <T> T findAll_JSON(GenericType<T> superType) throws ClientErrorException {
+    public <T> T findAll_JSON(GenericType<T> responseType) throws ClientErrorException {
         WebTarget resource = webTarget;
-        return resource.request(javax.ws.rs.core.MediaType.APPLICATION_JSON).get(superType);
+        return resource.request(javax.ws.rs.core.MediaType.APPLICATION_JSON).get(responseType);
     }
 
     public void remove(String id) throws ClientErrorException {
