@@ -5,40 +5,41 @@
  */
 package controllers;
 
+import cliente.OrganizacionClient;
+import static com.opensymphony.xwork2.Action.ERROR;
+import static com.opensymphony.xwork2.Action.SUCCESS;
 import com.opensymphony.xwork2.ActionSupport;
 import entidades.Organizacion;
+import java.util.Map;
 import javax.ws.rs.core.GenericType;
 import org.apache.commons.codec.digest.DigestUtils;
-import cliente.OrganizacionClient;
-import java.util.Map;
 import org.apache.struts2.interceptor.SessionAware;
 
 /**
  *
  * @author usuario
  */
-public class loginOrganizacionAction extends ActionSupport implements SessionAware{
+public class EliminarOrganizacionAction extends ActionSupport implements SessionAware {
     
-    private String nif;
-    private String password;
     private String mensaje;
+    private String password;
     private Map<String, Object> session;
     
-    public loginOrganizacionAction() {
+    public EliminarOrganizacionAction() {
     }
     
     public String execute() throws Exception {
-        //Instanciamos el cliente y buscamos uno con el mismo nif
+        Integer id = (Integer) session.get("organizacionId");
         OrganizacionClient client1=new OrganizacionClient();
         GenericType<Organizacion> genericType = new GenericType<Organizacion>() {};
         String aux = DigestUtils.sha256Hex(password);
         try {
-            Organizacion org = client1.find_XML(genericType, nif);
+            Organizacion org = client1.find_XML(genericType, id.toString());
             if (org == null || !org.getContrasenya().equals(aux)) {
                 mensaje = "Contraseña incorrecta.";
                 return ERROR;
             }
-            session.put("organizacionId", org.getOrganizacionId());
+            client1.remove(id.toString());
             return SUCCESS;
 
         } catch (javax.ws.rs.NotFoundException e) {
@@ -52,23 +53,10 @@ public class loginOrganizacionAction extends ActionSupport implements SessionAwa
             return ERROR;
         }
     }
-    
-     public void validate() {
-        if (password == null || password.trim().isEmpty()) {
-            addFieldError("password", "Introduzca contraseña");
-        }
-        if (nif==null || nif.trim().isEmpty()){
-            addFieldError("nif", "Inserte el nif de la organización");
-        }
-    }
-    
 
-    public String getNif() {
-        return nif;
-    }
-
-    public void setNif(String nif) {
-        this.nif = nif;
+    @Override
+    public void setSession(Map<String, Object> session) {
+        this.session = session;
     }
 
     public String getPassword() {
@@ -83,12 +71,8 @@ public class loginOrganizacionAction extends ActionSupport implements SessionAwa
         return mensaje;
     }
 
-    public Map<String, Object> getSession() {
-        return session;
-    }
-
-    public void setSession(Map<String, Object> session) {
-        this.session = session;
+    public void setMensaje(String mensaje) {
+        this.mensaje = mensaje;
     }
     
     

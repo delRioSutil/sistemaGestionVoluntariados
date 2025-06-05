@@ -10,7 +10,7 @@
             <result>/example/HelloWorld.jsp</result>
         </action>-->
         <action name="registrarOrg" class="controllers.RegistrarOrganizacionAction">
-            <result name="success">/vista/registrarOrganizacion.jsp</result>
+            <result name="success">/vista/index.jsp</result>
             <result name="input">/vista/registrarOrganizacion.jsp</result>
         </action>
         
@@ -27,6 +27,17 @@
         <action name="accederLoginOrg">
             <result>/vista/loginOrganizacion.jsp</result>
         </action>
+        
+        
+        <action name="irAEliminarOrganizacion">
+            <result>/vista/eliminarOrganizacion.jsp</result>
+        </action>
+        
+        <action name="eliminarOrganizacion" class="controllers.EliminarOrganizacionAction">
+            <result name="success">/vista/registrarOrganizacion.jsp</result>
+            <result name="error">/vista/eliminarOrganizacion.jsp</result>
+        </action>
+        
     </package>
 </struts>
 
