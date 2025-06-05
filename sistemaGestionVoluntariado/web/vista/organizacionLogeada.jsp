@@ -18,5 +18,9 @@
         <s:form action="irAEliminarOrganizacion" namespace="/organizacion">
             <s:submit value="Eliminar tu cuenta"/>
         </s:form>
+        
+        <s:form action="irAActualizarOrganizacion" namespace="/organizacion">
+            <s:submit value="Actualizar datos de tu cuenta"/>
+        </s:form>
     </body>
 </html>
