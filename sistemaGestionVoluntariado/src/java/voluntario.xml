@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <package name="voluntario" namespace="/voluntario" extends="struts-default">
+        <!--<action name="HelloWorld" class="example.HelloWorld">
+            <result>/example/HelloWorld.jsp</result>
+        </action>-->
+        <action name="registrarVoluntario" class="controllers.RegistrarVoluntarioAction">
+            <result name="success">/vista/index.jsp</result>
+            <result name="input">/vista/registrarVoluntario.jsp</result>
+        </action>
+        
+        <action name="loginVoluntario" class="controllers.LoginVoluntarioAction">
+            <result name="success">/vista/OpcionesVoluntario.jsp</result>
+            <result name="input">/vista/loginVoluntario.jsp</result>
+            <result name="error">/vista/loginVoluntario.jsp</result>
+        </action>
+        
+         <action name="eliminarVoluntario" class="controllers.EliminarVoluntarioAction">
+        <result name="success">/vista/loginVoluntario.jsp</result> 
+        <result name="error">/vista/eliminarVoluntario.jsp</result>
+    </action>
+
+    <action name="irAEliminarVoluntario" class="controllers.IrAEliminarVoluntarioAction">
+        <result name="success">/vista/eliminarVoluntario.jsp</result>
+    </action>
+    
+    <action name="accederRegistroVol">
+            <result>/vista/registrarVoluntario.jsp</result>
+        </action>
+        
+        <action name="accederLoginVol">
+            <result>/vista/loginVoluntario.jsp</result>
+        </action>
+    </package>
+</struts>
+

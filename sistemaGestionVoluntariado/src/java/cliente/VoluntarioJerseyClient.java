@@ -11,27 +11,27 @@ import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.GenericType;
 
 /**
- * Jersey REST client generated for REST resource:OrganizacionFacadeREST
- * [entidades.organizacion]<br>
+ * Jersey REST client generated for REST resource:VoluntarioFacadeREST
+ * [entidades.voluntario]<br>
  * USAGE:
  * <pre>
- *        OrganizacionClient client = new OrganizacionClient();
+ *        VoluntarioJerseyClient client = new VoluntarioJerseyClient();
  *        Object response = client.XXX(...);
  *        // do whatever with response
  *        client.close();
  * </pre>
  *
- * @author usuario
+ * @author Antonio
  */
-public class OrganizacionClient {
+public class VoluntarioJerseyClient {
 
     private WebTarget webTarget;
     private Client client;
     private static final String BASE_URI = "http://localhost:8080/SWvoluntariado/webresources";
 
-    public OrganizacionClient() {
+    public VoluntarioJerseyClient() {
         client = javax.ws.rs.client.ClientBuilder.newClient();
-        webTarget = client.target(BASE_URI).path("entidades.organizacion");
+        webTarget = client.target(BASE_URI).path("entidades.voluntario");
     }
 
     public String countREST() throws ClientErrorException {

@@ -4,6 +4,8 @@
 
 <struts>
     <include file="organizacion.xml"/>
+    <include file="voluntario.xml"/>
+    
     <!-- Configuration for the default package. -->
     <package name="default" extends="struts-default">
     </package>

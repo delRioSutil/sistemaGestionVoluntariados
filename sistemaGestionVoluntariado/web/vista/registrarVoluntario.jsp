@@ -13,12 +13,11 @@
         <title>Registrar organizacion</title>
     </head>
     <body>
-        <h1>Introduce los datos de la organización</h1>
-        <s:form action="/organizacion/registrarOrg">
+        <h1>Introduce los datos del voluntario</h1>
+        <s:form action="/voluntario/registrarVoluntario">
             <s:textfield name="username" label="Nombre de usuario"></s:textfield>
             <s:textfield name="email" type="email" label="email"></s:textfield>
             <s:password name="password" label="contraseña"></s:password>
-            <s:textfield name="nif" label="NIF"></s:textfield>
             <s:submit value="registrar"></s:submit>
         </s:form>
      
