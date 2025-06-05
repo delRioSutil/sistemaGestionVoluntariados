@@ -15,7 +15,6 @@
     <body>
         <h1>¿Quieres eliminar tu cuenta?</h1>
         <s:form action="eliminarOrganizacion" namespace="/organizacion">
-            <s:hidden name="organizacionId" value="%{#session.organizacionId}" />
             <s:password name="password" label="Contraseña"></s:password>
             <s:submit value="Eliminar" />
         </s:form>

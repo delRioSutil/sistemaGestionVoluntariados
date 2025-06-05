@@ -18,7 +18,7 @@ import org.apache.commons.codec.digest.DigestUtils;
  */
 public class RegistrarVoluntarioAction extends ActionSupport {
     
-     private String username;
+    private String username;
     private String email;
     private String password;
     
@@ -28,7 +28,11 @@ public class RegistrarVoluntarioAction extends ActionSupport {
     
     public String execute() throws Exception {
         //Definimos e instanciamos la entidad a introducir
+        VoluntarioJerseyClient client1=new VoluntarioJerseyClient();
+        String id = client1.countREST();
+        Integer idInt = Integer.valueOf(id);
         Voluntario vol = new Voluntario();
+        vol.setVoluntarioId(idInt + 1);
         vol.setCorreo(email);
         vol.setNombre(username);
         //Convertimos la contraseña en hash para mayor seguridad
@@ -38,12 +42,12 @@ public class RegistrarVoluntarioAction extends ActionSupport {
         vol.setInscripcionCollection(null);
         vol.setTareaCollection(null);
         vol.setValoracionCollection(null);
-       
+        client1.create_XML(vol);
        
         
         //Instanciamos cliente para usar servicio web de base de datos
-        VoluntarioJerseyClient client1=new VoluntarioJerseyClient();
-        client1.create_XML(vol);
+        
+        
         return SUCCESS;
     }
         public void validate() {

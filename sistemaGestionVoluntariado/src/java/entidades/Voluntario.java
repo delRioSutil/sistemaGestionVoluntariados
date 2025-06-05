@@ -56,7 +56,7 @@ public class Voluntario implements Serializable {
     private String correo;
     @Basic(optional = false)
     @NotNull
-    @Size(min = 1, max = 30)
+    @Size(min = 1, max = 100)
     @Column(name = "contrasenya")
     private String contrasenya;
     @OneToMany(mappedBy = "voluntarioid", cascade = CascadeType.ALL, orphanRemoval = true)
