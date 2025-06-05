@@ -22,6 +22,7 @@
         <s:form action="/organizacion/accederLoginOrg">
             <s:submit value="Logearse como organización"></s:submit>
         </s:form>
+        <br>
         <s:form action="/voluntario/accederRegistroVol">
             <s:submit value="Registrarse como voluntario"></s:submit>
         </s:form>

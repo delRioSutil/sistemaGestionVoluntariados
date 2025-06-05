@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -13,5 +14,9 @@
     </head>
     <body>
         <h1>Logeado con exito!</h1>
+        
+        <s:form action="irAEliminarOrganizacion" namespace="/organizacion">
+            <s:submit value="Eliminar tu cuenta"/>
+        </s:form>
     </body>
 </html>

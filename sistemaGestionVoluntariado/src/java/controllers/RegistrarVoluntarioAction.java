@@ -39,6 +39,7 @@ public class RegistrarVoluntarioAction extends ActionSupport {
         vol.setTareaCollection(null);
         vol.setValoracionCollection(null);
        
+       
         
         //Instanciamos cliente para usar servicio web de base de datos
         VoluntarioJerseyClient client1=new VoluntarioJerseyClient();
