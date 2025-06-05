@@ -59,11 +59,11 @@ public class Voluntario implements Serializable {
     @Size(min = 1, max = 30)
     @Column(name = "contrasenya")
     private String contrasenya;
-    @OneToMany(mappedBy = "voluntarioid")
+    @OneToMany(mappedBy = "voluntarioid", cascade = CascadeType.ALL, orphanRemoval = true)
     private Collection<Donacion> donacionCollection;
-    @OneToMany(mappedBy = "voluntarioid")
+    @OneToMany(mappedBy = "voluntarioid", cascade = CascadeType.ALL, orphanRemoval = true)
     private Collection<Tarea> tareaCollection;
-    @OneToMany(mappedBy = "voluntarioid")
+    @OneToMany(mappedBy = "voluntarioid", cascade = CascadeType.ALL, orphanRemoval = true)
     private Collection<Inscripcion> inscripcionCollection;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "voluntario")
     private Collection<Valoracion> valoracionCollection;
