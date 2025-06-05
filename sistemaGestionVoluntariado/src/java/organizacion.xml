@@ -33,9 +33,18 @@
             <result>/vista/eliminarOrganizacion.jsp</result>
         </action>
         
+        <action name="irAActualizarOrganizacion">
+            <result>/vista/actualizarOrganizacion.jsp</result>
+        </action>
+        
         <action name="eliminarOrganizacion" class="controllers.EliminarOrganizacionAction">
             <result name="success">/vista/registrarOrganizacion.jsp</result>
             <result name="error">/vista/eliminarOrganizacion.jsp</result>
+        </action>
+        
+        <action name="actualizarOrganizacion" class="controllers.ActualizarOrganizacionAction">
+            <result name="success">/vista/loginOrganizacion.jsp</result>
+            <result name="input">/vista/actualizarOrganizacion.jsp</result>
         </action>
         
     </package>
