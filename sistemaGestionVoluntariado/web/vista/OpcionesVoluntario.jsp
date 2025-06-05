@@ -20,9 +20,6 @@
     <s:submit value="Editar valoración"/>
 </s:form>
 
-<s:form action="eliminarValoracion" namespace="/voluntario">
-    <s:submit value="Eliminar valoración"/>
-</s:form>
 
 </body>
 </html>
