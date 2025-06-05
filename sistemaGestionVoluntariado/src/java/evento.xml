@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<!-- Author: usuario -->
+ 
+<struts>
+        <package name="evento" namespace="/evento" extends="struts-default">
+        <!--<action name="HelloWorld" class="example.HelloWorld">
+            <result>/example/HelloWorld.jsp</result>
+        </action>-->
+        <action name="crearEvento" class="controllers.CrearEventoAction">
+            <result name="success">/vista/registrarOrganizacion.jsp</result>
+            <result name="input">/vista/organizacionLogeada.jsp</result>
+        </action>
+    </package>
+</struts>

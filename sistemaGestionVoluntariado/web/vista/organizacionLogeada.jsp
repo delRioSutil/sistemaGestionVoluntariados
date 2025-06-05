@@ -57,7 +57,12 @@
         <s:else>
             <p>No hay eventos registrados para esta organización.</p>
         </s:else>
-        <s:form action="crearEventoAction">
+        <h2>Añade un evento nuevo</h2>
+        <s:form action="crearEvento" namespace="/evento">
+            <s:textfield name="nombre" label="Nombre: "></s:textfield>
+            <s:textarea name="descripcion" label="Descripción: "></s:textarea>
+            <s:textfield name="fechainicio" label="Fecha de inicio: " type="date"></s:textfield>
+            <s:textfield name="fechafin" label="Fecha de fin: " type="date"></s:textfield>
             <s:submit value="Crear Evento"></s:submit>
         </s:form>
     </body>
