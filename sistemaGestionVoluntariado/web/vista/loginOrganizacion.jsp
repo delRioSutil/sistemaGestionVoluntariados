@@ -20,6 +20,8 @@
             <s:submit value="iniciar"></s:submit>
         </s:form>
 
+        
+        
         <s:if test="mensaje != null">
             <div style="color:red;">
                 <s:property value="mensaje" />

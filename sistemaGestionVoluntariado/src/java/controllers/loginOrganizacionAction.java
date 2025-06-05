@@ -5,12 +5,17 @@
  */
 package controllers;
 
+import cliente.EventoClient;
 import com.opensymphony.xwork2.ActionSupport;
 import entidades.Organizacion;
 import javax.ws.rs.core.GenericType;
 import org.apache.commons.codec.digest.DigestUtils;
 import cliente.OrganizacionClient;
+import entidades.Evento;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import org.apache.struts2.interceptor.SessionAware;
 
 /**
@@ -30,15 +35,28 @@ public class loginOrganizacionAction extends ActionSupport implements SessionAwa
     public String execute() throws Exception {
         //Instanciamos el cliente y buscamos uno con el mismo nif
         OrganizacionClient client1=new OrganizacionClient();
+        EventoClient client2 = new EventoClient();
         GenericType<Organizacion> genericType = new GenericType<Organizacion>() {};
+        GenericType<List<Evento>> genericTypeList = new GenericType<List<Evento>>() {};
+        List<Evento> eventos = new ArrayList<Evento>();
+        List<Evento> eventosOrg = new ArrayList<Evento>();
         String aux = DigestUtils.sha256Hex(password);
         try {
             Organizacion org = client1.find_XML(genericType, nif);
+            eventos =  client2.findAll_XML(genericTypeList);         
             if (org == null || !org.getContrasenya().equals(aux)) {
                 mensaje = "Contraseña incorrecta.";
                 return ERROR;
             }
-            session.put("organizacionId", org.getOrganizacionId());
+            Integer id = org.getOrganizacionId();
+            session.put("organizacionId", id);
+            session.put("organizacion", org);
+            for(Evento evento: eventos){
+                if(evento.getOrganizacionid().getOrganizacionId() == id){
+                    eventosOrg.add(evento);
+                }
+            }
+            session.put("eventos", eventosOrg);
             return SUCCESS;
 
         } catch (javax.ws.rs.NotFoundException e) {
