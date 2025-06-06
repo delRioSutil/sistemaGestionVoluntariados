@@ -67,5 +67,9 @@
             <s:textfield name="fechafin" label="Fecha de fin: " type="date"></s:textfield>
             <s:submit value="Crear Evento"></s:submit>
         </s:form>
+        
+        <s:form action="cerrarSesion" namespace="/organizacion">
+            <s:submit value="Cerrar sesion"></s:submit>
+        </s:form>
     </body>
 </html>

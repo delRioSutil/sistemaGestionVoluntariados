@@ -1,5 +1,6 @@
 package controllers;
 
+import cliente.EventoClient;
 import cliente.OrganizacionClient;
 import com.opensymphony.xwork2.ActionSupport;
 import entidades.Voluntario;
@@ -8,7 +9,9 @@ import cliente.VoluntarioJerseyClient;
 import static com.opensymphony.xwork2.Action.ERROR;
 import static com.opensymphony.xwork2.Action.SUCCESS;
 import com.opensymphony.xwork2.util.logging.Logger;
+import entidades.Evento;
 import entidades.Organizacion;
+import java.util.List;
 import java.util.Map;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.struts2.interceptor.SessionAware;
@@ -18,7 +21,8 @@ public class LoginVoluntarioAction extends ActionSupport implements SessionAware
     private String id;
     private String password;
     private Voluntario voluntario;
-   private Map<String, Object> session;
+    private Map<String, Object> session;
+    private List<Evento> eventos;
 
     public LoginVoluntarioAction() {
     }
@@ -27,6 +31,10 @@ public class LoginVoluntarioAction extends ActionSupport implements SessionAware
      public String execute() throws Exception  {
         //Instanciamos el cliente y buscamos uno con el mismo nif
         VoluntarioJerseyClient client1=new VoluntarioJerseyClient();
+        //Llamamos al cliente de eventos y cargamos todos los eventos del sistema en variable eventos.
+        EventoClient client2 = new EventoClient();
+        GenericType<List<Evento>> genericTypeEventos = new GenericType<List<Evento>>() {};
+        eventos = client2.findAll_XML(genericTypeEventos);
         GenericType<Voluntario> genericType = new GenericType<Voluntario>() {};
         String mensaje;
         String aux = DigestUtils.sha256Hex(password);
@@ -36,7 +44,7 @@ public class LoginVoluntarioAction extends ActionSupport implements SessionAware
                 mensaje = "Datos incorrectos.";
                 return ERROR;
             }
-      session.put("voluntarioId", vol.getVoluntarioId());
+         session.put("voluntarioId", vol.getVoluntarioId());
          
          return SUCCESS;
 
@@ -100,4 +108,14 @@ public class LoginVoluntarioAction extends ActionSupport implements SessionAware
     public void setSession(Map<String, Object> session) {
  this.session = session;
     }
+
+    public List<Evento> getEventos() {
+        return eventos;
+    }
+
+    public void setEventos(List<Evento> eventos) {
+        this.eventos = eventos;
+    }
+    
+    
 }
