@@ -16,8 +16,8 @@
         <h2>Editar Valoración</h2>
 
         <s:form action="editarValoracion" namespace="/valoracion" method="post">
-    <s:hidden name="eventoid" value="%{valoracion.valoracionPK.eventoid}" />
-    <s:hidden name="voluntarioid" value="%{valoracion.valoracionPK.voluntarioid}" />
+    <s:hidden name="eventoid" value="%{eventoid}" />
+    <s:hidden name="voluntarioid" value="%{voluntarioid}" />
     <s:textfield name="puntuacion" label="Puntuación" value="%{valoracion.puntuacion}" />
     <s:textarea name="comentario" label="Comentario" value="%{valoracion.comentario}" />
     <s:submit value="Guardar cambios" />
