@@ -12,11 +12,11 @@
     <s:submit value="Eliminar voluntario"/>
 </s:form>
 
-<s:form action="crearValoracion" namespace="/voluntario">
+<s:form action="crearValoracion" namespace="/valoracion">
     <s:submit value="Crear valoración"/>
 </s:form>
 
-<s:form action="editarValoracion" namespace="/voluntario">
+<s:form action="listarValoraciones" namespace="/valoracion">
     <s:submit value="Editar valoración"/>
 </s:form>
 

@@ -13,15 +13,30 @@
         </action>-->
         <action name="crearValoracion" class="controllers.RegistrarValoracionAction" method="mostrarEventos">
             <result name="success">/vista/crearValoracion.jsp</result>
-            <result name="error">/vista/opcionesVoluntario.jsp</result>
+            <result name="error">/vista/OpcionesVoluntario.jsp</result>
         </action>
         <action name="registrarValoracion" class="controllers.RegistrarValoracionAction" method="registrarValoracion">
             <result name="success">/vista/registrarValoracion.jsp</result>
-            <result name="error">/vista/opcionesVoluntario.jsp</result>
+            <result name="error">/vista/OpcionesVoluntario.jsp</result>
         </action>
         <action name="guardarValoracion" class="controllers.RegistrarValoracionAction" method="guardarValoracion">
             <result name="success">/vista/OpcionesVoluntario.jsp</result>
-            <result name="error">/vista/opcionesVoluntario.jsp</result>
+            <result name="error">/vista/OpcionesVoluntario.jsp</result>
         </action>
+        
+        <action name="listarValoraciones" class="controllers.ListarValoracionesAction">
+    <result name="success">/vista/listaValoraciones.jsp</result>
+    <result name="error">/vista/loginVoluntario.jsp</result>
+</action>
+
+<action name="cargarValoracionParaEditar" class="controllers.CargarValoracionAction">
+    <result name="success">/vista/editarValoracion.jsp</result>
+    <result name="error">/vista/OpcionesVoluntario.jsp</result>
+</action>
+
+<action name="editarValoracion" class="controllers.EditarValoracionAction">
+    <result name="success">/vista/OpcionesVoluntario.jsp</result>
+    <result name="error">/vista/OpcionesVoluntario.jsp</result>
+</action>
     </package>
 </struts>
