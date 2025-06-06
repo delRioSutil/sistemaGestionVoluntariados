@@ -10,6 +10,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="../css/estilos.css">
         <title>Logged Org</title>
     </head>
     <body>
@@ -36,6 +37,7 @@
                     <th>FechaFin</th>
 
                 </tr>
+                <h2>Tus eventos:    </h2>
                 <s:iterator value="#session.eventos" var="evento">
                     <tr>
                         <td><s:property value="#evento.nombre" /></td>
