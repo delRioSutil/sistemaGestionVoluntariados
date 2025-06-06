@@ -11,6 +11,7 @@ import entidades.Evento;
 import entidades.Organizacion;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.Map;
 import org.apache.struts2.interceptor.SessionAware;
 
@@ -52,6 +53,9 @@ public class CrearEventoAction extends ActionSupport implements SessionAware{
         evento.setValoracionCollection(null);
         evento.setOrganizacionid((Organizacion) session.get("organizacion"));
         client1.create_XML(evento);
+        List<Evento> eventos = (List<Evento>) session.get("eventos");
+        eventos.add(evento);
+        session.put("eventos", eventos);
         return SUCCESS;
     }
 
