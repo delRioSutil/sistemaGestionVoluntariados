@@ -2,41 +2,39 @@
 "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
 "http://struts.apache.org/dtds/struts-2.0.dtd">
 
-<!-- Author: Antonio -->
- 
 <struts>
-    <!-- Add your configuration elements here -->
-    
     <package name="valoracion" namespace="/valoracion" extends="struts-default">
-        <!--<action name="HelloWorld" class="example.HelloWorld">
-            <result>/example/HelloWorld.jsp</result>
-        </action>-->
-        <action name="crearValoracion" class="controllers.RegistrarValoracionAction" method="mostrarEventos">
+
+        <action name="crearValoracion" class="controllers.MostrarEventosAction">
             <result name="success">/vista/crearValoracion.jsp</result>
             <result name="error">/vista/OpcionesVoluntario.jsp</result>
         </action>
-        <action name="registrarValoracion" class="controllers.RegistrarValoracionAction" method="registrarValoracion">
-            <result name="success">/vista/registrarValoracion.jsp</result>
+
+        <action name="registrarValoracion">
+            <result>/vista/registrarValoracion.jsp</result>
+        </action>
+
+        <action name="guardarValoracion" class="controllers.GuardarValoracionAction">
+            <result name="success">/vista/OpcionesVoluntario.jsp</result>
+            <result name="input">/vista/registrarValoracion.jsp</result>
+            <result name="error">/vista/OpcionesVoluntario.jsp</result>
+          
+        </action>
+
+        <action name="listarValoraciones" class="controllers.ListarValoracionesAction">
+            <result name="success">/vista/listaValoraciones.jsp</result>
+            <result name="error">/vista/loginVoluntario.jsp</result>
+        </action>
+
+        <action name="cargarValoracionParaEditar" class="controllers.CargarValoracionAction">
+            <result name="success">/vista/editarValoracion.jsp</result>
             <result name="error">/vista/OpcionesVoluntario.jsp</result>
         </action>
-        <action name="guardarValoracion" class="controllers.RegistrarValoracionAction" method="guardarValoracion">
+
+        <action name="editarValoracion" class="controllers.EditarValoracionAction">
             <result name="success">/vista/OpcionesVoluntario.jsp</result>
             <result name="error">/vista/OpcionesVoluntario.jsp</result>
         </action>
-        
-        <action name="listarValoraciones" class="controllers.ListarValoracionesAction">
-    <result name="success">/vista/listaValoraciones.jsp</result>
-    <result name="error">/vista/loginVoluntario.jsp</result>
-</action>
 
-<action name="cargarValoracionParaEditar" class="controllers.CargarValoracionAction">
-    <result name="success">/vista/editarValoracion.jsp</result>
-    <result name="error">/vista/OpcionesVoluntario.jsp</result>
-</action>
-
-<action name="editarValoracion" class="controllers.EditarValoracionAction">
-    <result name="success">/vista/OpcionesVoluntario.jsp</result>
-    <result name="error">/vista/OpcionesVoluntario.jsp</result>
-</action>
     </package>
 </struts>

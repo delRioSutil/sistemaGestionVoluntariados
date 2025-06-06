@@ -29,8 +29,7 @@
             <td><s:property value="puntuacion"/></td>
             <td><s:property value="comentario"/></td>
             <td>
-            Evento ID (debug): <s:property value="valoracionPK.eventoid"/><br/>
-            Voluntario ID (debug): <s:property value="valoracionPK.voluntarioid"/><br/>
+            
 
                 <s:form action="cargarValoracionParaEditar" namespace="/valoracion">
                     <s:hidden name="eventoid" value="%{#v.valoracionPK.eventoid}"/>
@@ -39,8 +38,8 @@
                 </s:form>
 
                 <s:form action="eliminarValoracion" namespace="/valoracion">
-                    <s:hidden name="eventoid" value="%{#v.valoracionPK.eventoid}"/>
-                    <s:hidden name="voluntarioid" value="%{#v.valoracionPK.voluntarioid}"/>
+                    <s:hidden name="eventoidd" value="%{#v.valoracionPK.eventoid}"/>
+                    <s:hidden name="voluntarioidd" value="%{#v.valoracionPK.voluntarioid}"/>
                     <s:submit value="Eliminar"/>
                 </s:form>
             </td>
@@ -49,3 +48,5 @@
 </table>
 </body>
 </html>
+
+
