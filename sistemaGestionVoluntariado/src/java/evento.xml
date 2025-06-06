@@ -12,7 +12,7 @@
             <result>/example/HelloWorld.jsp</result>
         </action>-->
         <action name="crearEvento" class="controllers.CrearEventoAction">
-            <result name="success">/vista/registrarOrganizacion.jsp</result>
+            <result name="success">/vista/organizacionLogeada.jsp</result>
             <result name="input">/vista/organizacionLogeada.jsp</result>
         </action>
     </package>
