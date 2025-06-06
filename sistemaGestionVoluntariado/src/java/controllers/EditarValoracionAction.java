@@ -22,8 +22,6 @@ public class EditarValoracionAction extends ActionSupport implements SessionAwar
             int voluntarioid = (Integer) session.get("voluntarioId");
            
             
-        System.out.println("DEBUG >> EVENTO ID RECIBIDO: " + eventoid);
-        System.out.println("DEBUG >> VOLUNTARIO ID (de sesión): " + voluntarioid);
             ValoracionJerseyClient client = new ValoracionJerseyClient();
             ValoracionPK pk = new ValoracionPK(eventoid, voluntarioid);
 

@@ -27,7 +27,7 @@ public class EventoClient {
 
     private WebTarget webTarget;
     private Client client;
-    private static final String BASE_URI = "http://localhost:29220/SWvoluntariado/webresources";
+    private static final String BASE_URI = "http://localhost:8080/SWvoluntariado/webresources";
 
     public EventoClient() {
         client = javax.ws.rs.client.ClientBuilder.newClient();

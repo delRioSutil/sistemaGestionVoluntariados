@@ -10,8 +10,8 @@
             <result name="error">/vista/OpcionesVoluntario.jsp</result>
         </action>
 
-        <action name="registrarValoracion">
-            <result>/vista/registrarValoracion.jsp</result>
+        <action name="registrarValoracion" class="controllers.IrARegistrarValoracionAction">
+            <result name="success">/vista/registrarValoracion.jsp</result>
         </action>
 
         <action name="guardarValoracion" class="controllers.GuardarValoracionAction">
@@ -36,5 +36,9 @@
             <result name="error">/vista/OpcionesVoluntario.jsp</result>
         </action>
 
+        <action name="eliminarValoracion" class="controllers.EliminarValoracionAction">
+            <result name="success">/vista/OpcionesVoluntario.jsp</result>
+            <result name="error">/vista/OpcionesVoluntario.jsp</result>
+        </action>
     </package>
 </struts>

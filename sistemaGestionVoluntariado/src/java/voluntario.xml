@@ -25,8 +25,8 @@
         <result name="error">/vista/eliminarVoluntario.jsp</result>
     </action>
 
-    <action name="irAEliminarVoluntario" class="controllers.IrAEliminarVoluntarioAction">
-        <result name="success">/vista/eliminarVoluntario.jsp</result>
+    <action name="irAEliminarVoluntario">
+        <result>/vista/eliminarVoluntario.jsp</result>
     </action>
     
     <action name="accederRegistroVol">

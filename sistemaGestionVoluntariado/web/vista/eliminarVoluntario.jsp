@@ -12,9 +12,15 @@
         <h2>¿Está seguro de que desea eliminar su cuenta?</h2>
 
         <s:form action="eliminarVoluntario" namespace="/voluntario">
-            <s:hidden name="voluntarioId" value="%{#session.voluntarioId}" />
+            <s:password name="password" label="Contraseña"></s:password>
             <s:submit value="Eliminar" />
         </s:form>
+        
+        <s:if test="mensaje != null">
+            <div style="color:red;">
+                <s:property value="mensaje" />
+            </div>
+        </s:if>
 
 
 
