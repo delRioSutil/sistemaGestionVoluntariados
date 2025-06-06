@@ -11,6 +11,7 @@ import static com.opensymphony.xwork2.Action.SUCCESS;
 import com.opensymphony.xwork2.util.logging.Logger;
 import entidades.Evento;
 import entidades.Organizacion;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import org.apache.commons.codec.digest.DigestUtils;
@@ -34,7 +35,24 @@ public class LoginVoluntarioAction extends ActionSupport implements SessionAware
         //Llamamos al cliente de eventos y cargamos todos los eventos del sistema en variable eventos.
         EventoClient client2 = new EventoClient();
         GenericType<List<Evento>> genericTypeEventos = new GenericType<List<Evento>>() {};
-        eventos = client2.findAll_XML(genericTypeEventos);
+        
+        
+        List<Evento> todosLosEventos = client2.findAll_XML(genericTypeEventos);
+        eventos = new java.util.ArrayList<>();
+
+        //Obtener fecha actual
+        Date hoy = new Date();
+
+        //Filtrar solo eventos futuros
+        for (Evento e : todosLosEventos) {
+            if (e.getFechainicio() != null && !e.getFechainicio().before(hoy)) {
+                eventos.add(e);
+            }
+        }
+        
+        
+        
+        
         GenericType<Voluntario> genericType = new GenericType<Voluntario>() {};
         String mensaje;
         String aux = DigestUtils.sha256Hex(password);
