@@ -26,10 +26,7 @@ public class InscribirseEventoAction extends ActionSupport implements SessionAwa
     private String eventoNombre;
     String mensaje;
 
-    // SETTER obligatorio para Struts
-    public void setEventoId(Integer eventoId) {
-        this.eventoId = eventoId;
-    }
+   
 
     @Override
     public String execute() throws Exception {
@@ -99,7 +96,10 @@ if (evento == null) {
     public void setSession(Map<String, Object> map) {
         this.session = map;
     }
-
+    
+    public void setEventoId(Integer eventoId) {
+        this.eventoId = eventoId;
+    }
     public String getMensaje() {
         return mensaje;
     }
@@ -107,5 +107,14 @@ if (evento == null) {
     public void setMensaje(String mensaje) {
         this.mensaje = mensaje;
     }
+
+    public Map<String, Object> getSession() {
+        return session;
+    }
+
+    public Integer getEventoId() {
+        return eventoId;
+    }
+    
     
 }

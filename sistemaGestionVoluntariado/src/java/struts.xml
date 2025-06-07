@@ -7,6 +7,7 @@
     <include file="voluntario.xml"/>
     <include file="valoraciones.xml"/>
     <include file="evento.xml"/>
+    <include file="inscripcion.xml"/>
     <!-- Configuration for the default package. -->
     <package name="default" extends="struts-default">
     </package>

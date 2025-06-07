@@ -41,7 +41,7 @@
                         <td>
                             <s:form action="inscribirseAevento" namespace="/voluntario">
                                 <s:hidden name="eventoId" value="%{#evento.eventoid}" />
-                                <s:hidden name="nombreEvento" value="%{#evento.nombre}" />
+                                <s:hidden name="eventoNombre" value="%{#evento.nombre}" />
                                 <s:hidden name="fechaInicioEvento" value="%{#evento.fechainicio}" />
                                 <s:hidden name="fechaFinEvento" value="%{#evento.fechafin}" />
                                 <s:submit value="Inscripción" />

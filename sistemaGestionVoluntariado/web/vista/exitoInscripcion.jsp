@@ -9,20 +9,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Inscripción</title>
+    <title>Inscripción Exitosa</title>
     <link rel="stylesheet" href="../css/estilos.css">
 </head>
 <body>
 
-    <h2>Resultado de la inscripción</h2>
+    <h2>Inscripción realizada con éxito</h2>
 
     <s:if test="mensaje != null">
         <p><strong><s:property value="mensaje" /></strong></p>
-    </s:if>
 
-    <s:else>
-        <p>Te has inscrito correctamente al evento.</p>
-    </s:else>
+        <s:if test="mensaje == 'Ya estás inscrito en este evento.'">
+            <s:form action="eliminarInscripcion" namespace="/inscripcion">
+                <s:hidden name="eventoId" value="%{eventoId}" />
+                <s:submit value="Eliminar inscripción" />
+            </s:form>
+        </s:if>
+    </s:if>
 
     <s:form action="mostrarOpcionesVoluntario" namespace="/voluntario">
         <s:submit value="Volver a opciones" />

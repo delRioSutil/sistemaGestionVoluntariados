@@ -1,0 +1,16 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<!-- Author: juanr -->
+ 
+<struts>
+   <package name="inscripcion" namespace="/inscripcion" extends="struts-default">
+
+       <action name="eliminarInscripcion" class="controllers.EliminarInscripcionAction">
+    <result name="success">/vista/exitoInscripcion.jsp</result>
+            <result name="error">/vista/exitoInscripcion.jsp</result>
+  
+</action>
+    </package>
+</struts>
