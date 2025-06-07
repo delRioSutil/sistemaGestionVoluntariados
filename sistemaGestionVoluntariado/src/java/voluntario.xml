@@ -15,26 +15,43 @@
         </action>
         
         <action name="loginVoluntario" class="controllers.LoginVoluntarioAction">
-            <result name="success">/vista/OpcionesVoluntario.jsp</result>
-            <result name="input">/vista/loginVoluntario.jsp</result>
-            <result name="error">/vista/loginVoluntario.jsp</result>
+            <result name="success" type="redirectAction">
+                <param name="actionName">mostrarOpcionesVoluntario</param>
+                    <param name="namespace">/voluntario</param>
+            </result>
+            <result name="error">/voluntario/loginVoluntario.jsp</result>
+            <result name="input">/voluntario/loginVoluntario.jsp</result>
         </action>
         
-         <action name="eliminarVoluntario" class="controllers.EliminarVoluntarioAction">
-        <result name="success">/vista/loginVoluntario.jsp</result> 
-        <result name="error">/vista/eliminarVoluntario.jsp</result>
-    </action>
-
-    <action name="irAEliminarVoluntario">
-        <result>/vista/eliminarVoluntario.jsp</result>
-    </action>
+        
+        <action name="eliminarVoluntario" class="controllers.EliminarVoluntarioAction">
+            <result name="success">/vista/loginVoluntario.jsp</result> 
+            <result name="error">/vista/eliminarVoluntario.jsp</result>
+        </action>
     
-    <action name="accederRegistroVol">
+        <action name="mostrarOpcionesVoluntario" class="controllers.MostrarOpcionesVoluntarioAction">
+            <result name="success">/vista/OpcionesVoluntario.jsp</result>
+            <result name="error">/vista/loginVoluntario</result>
+        </action>
+
+        <action name="irAEliminarVoluntario">
+            <result>/vista/eliminarVoluntario.jsp</result>
+        </action>
+    
+        <action name="accederRegistroVol">
             <result>/vista/registrarVoluntario.jsp</result>
         </action>
         
         <action name="accederLoginVol">
             <result>/vista/loginVoluntario.jsp</result>
+        </action>
+        
+        <action name="inscribirseAevento" class="controllers.InscribirseEventoAction">
+            <result name="success">/vista/exitoInscripcion.jsp</result>
+            <result name="error">/vista/OpcionesVoluntario.jsp</result>
+        </action>
+        <action name="opcionesVoluntario">
+            <result>/vista/OpcionesVoluntario.jsp</result>
         </action>
     </package>
 </struts>
