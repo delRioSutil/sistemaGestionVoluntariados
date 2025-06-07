@@ -1,0 +1,23 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<!-- Author: juanr -->
+ 
+<struts>
+    <package name="tarea" namespace="/tarea" extends="struts-default">
+        
+        <action name="irAEditarTarea" class="controllers.CargarTareaParaEditarAction">
+            <result name="success">/vista/editarTarea.jsp</result>
+            <result name="error">/vista/index.jsp</result>
+        </action>
+        
+
+        <action name="editarTarea" class="controllers.EditarTareaAction">
+            <result name="success">/vista/organizacionLogeada.jsp</result>
+            <result name="error">/vista/index.jsp</result>
+            
+          
+        </action>
+    </package>
+</struts>

@@ -8,6 +8,7 @@
     <include file="valoraciones.xml"/>
     <include file="evento.xml"/>
     <include file="inscripcion.xml"/>
+    <include file="tarea.xml"/>
     <!-- Configuration for the default package. -->
     <package name="default" extends="struts-default">
     </package>

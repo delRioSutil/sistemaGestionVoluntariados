@@ -15,5 +15,9 @@
             <result name="success">/vista/organizacionLogeada.jsp</result>
             <result name="input">/vista/organizacionLogeada.jsp</result>
         </action>
+        <action name="verEvento" class="controllers.VerDetallesEventoAction">
+            <result name="success">/vista/verDetallesEvento.jsp</result>
+            <result name="error">/vista/organizacionLogeada.jsp</result>
+        </action>
     </package>
 </struts>

@@ -40,12 +40,13 @@
                 <h2>Tus eventos:    </h2>
                 <s:iterator value="#session.eventos" var="evento">
                     <tr>
+                 
                         <td><s:property value="#evento.nombre" /></td>
                         <td><s:property value="#evento.descripcion" /></td>
                         <td><s:property value="#evento.fechainicio" /></td>
                         <td><s:property value="#evento.fechafin" /></td>
                         <td>
-                            <s:form action="verEvento" method="post">
+                            <s:form action="verEvento" namespace="/evento">
                                 <s:hidden name="eventoId" value="%{#evento.eventoid}" />
                                 <s:submit value="Más detalles" />
                             </s:form>
