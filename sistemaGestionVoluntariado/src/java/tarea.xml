@@ -15,9 +15,15 @@
 
         <action name="editarTarea" class="controllers.EditarTareaAction">
             <result name="success">/vista/organizacionLogeada.jsp</result>
+            <result name="error">/vista/index.jsp</result> 
+        </action>
+        <action name="irACrearTarea" class="controllers.CargarFormularioCrearTareaAction">
+            <result name="success">/vista/crearTarea.jsp</result>
             <result name="error">/vista/index.jsp</result>
-            
-          
+        </action>
+        <action name="crearTarea" class="controllers.CrearTareaAction">
+            <result name="success">/vista/organizacionLogeada.jsp</result>
+            <result name="error">/vista/organizacionLogeada.jsp</result>
         </action>
     </package>
 </struts>

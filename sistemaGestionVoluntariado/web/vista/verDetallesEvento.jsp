@@ -68,7 +68,7 @@
             <s:hidden name="eventoId" value="%{eventoId}" />
             <s:submit value="Crear nueva tarea" />
         </s:form>
-        <s:form action="volverAOrganizacion" method="post">
+        <s:form action="volverAOrganizacion" namespace="/evento">
             <s:submit value="Volver al panel de organización" />
         </s:form>
 

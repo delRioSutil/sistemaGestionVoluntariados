@@ -19,5 +19,8 @@
             <result name="success">/vista/verDetallesEvento.jsp</result>
             <result name="error">/vista/organizacionLogeada.jsp</result>
         </action>
+        <action name="volverAOrganizacion" class="controllers.VerDetallesEventoAction">
+            <result>/vista/organizacionLogeada.jsp</result>   
+        </action>
     </package>
 </struts>

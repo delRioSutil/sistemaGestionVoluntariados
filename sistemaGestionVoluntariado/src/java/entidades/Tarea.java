@@ -35,8 +35,7 @@ public class Tarea implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
-    @Basic(optional = false)
-    @NotNull
+    @Basic(optional = false)   
     @Column(name = "tareaId")
     private Integer tareaId;
     @Size(max = 100)
