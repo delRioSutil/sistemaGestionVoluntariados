@@ -27,5 +27,8 @@
 
         <s:submit value="Guardar tarea" />
     </s:form>
+    <s:form action="mostrarOpcionesVoluntario" namespace="/voluntario">
+        <s:submit value="Volver a opciones" />
+    </s:form>
 </body>
 </html>

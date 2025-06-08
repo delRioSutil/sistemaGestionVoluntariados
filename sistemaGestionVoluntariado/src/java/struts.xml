@@ -11,5 +11,8 @@
     <include file="tarea.xml"/>
     <!-- Configuration for the default package. -->
     <package name="default" extends="struts-default">
+        <action name="">
+            <result type="redirect">/vista/index.jsp</result>
+        </action>
     </package>
 </struts>

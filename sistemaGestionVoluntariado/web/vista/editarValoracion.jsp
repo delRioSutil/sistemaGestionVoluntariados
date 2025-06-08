@@ -23,5 +23,8 @@
     <s:textarea name="comentario" label="Comentario" value="%{valoracion.comentario}" />
     <s:submit value="Guardar cambios" />
 </s:form>
+        <s:form action="mostrarOpcionesVoluntario" namespace="/voluntario">
+        <s:submit value="Volver a opciones" />
+    </s:form>
     </body>
 </html>

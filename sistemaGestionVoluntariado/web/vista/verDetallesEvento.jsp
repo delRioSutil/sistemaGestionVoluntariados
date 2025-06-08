@@ -47,12 +47,6 @@
                                     <s:submit value="Editar" />
                                 </s:form>
                             </td>
-                            <td>
-                                <s:form action="eliminarTarea" method="post">
-                                    <s:hidden name="tareaId" value="%{#tarea.tareaId}" />
-                                    <s:submit value="Eliminar" />
-                                </s:form>
-                            </td>
                         </tr>
                     </s:iterator>
                 </tbody>

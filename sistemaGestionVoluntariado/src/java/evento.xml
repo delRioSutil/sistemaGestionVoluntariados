@@ -19,7 +19,7 @@
             <result name="success">/vista/verDetallesEvento.jsp</result>
             <result name="error">/vista/organizacionLogeada.jsp</result>
         </action>
-        <action name="volverAOrganizacion" class="controllers.VerDetallesEventoAction">
+        <action name="volverAOrganizacion">
             <result>/vista/organizacionLogeada.jsp</result>   
         </action>
     </package>

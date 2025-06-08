@@ -15,7 +15,10 @@
         </action>
 
         <action name="guardarValoracion" class="controllers.GuardarValoracionAction">
-            <result name="success">/vista/OpcionesVoluntario.jsp</result>
+            <result name="success" type="redirectAction">
+                <param name="actionName">mostrarOpcionesVoluntario</param>
+                    <param name="namespace">/voluntario</param>
+            </result>
             <result name="input">/vista/registrarValoracion.jsp</result>
             <result name="error">/vista/OpcionesVoluntario.jsp</result>
           

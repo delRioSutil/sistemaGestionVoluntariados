@@ -27,5 +27,8 @@
         <hr/>
     </s:iterator>
 
+        <s:form action="mostrarOpcionesVoluntario" namespace="/voluntario">
+        <s:submit value="Volver a opciones" />
+    </s:form>
 </body>
 </html>
