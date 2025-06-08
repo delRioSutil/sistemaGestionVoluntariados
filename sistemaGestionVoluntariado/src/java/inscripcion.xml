@@ -9,8 +9,14 @@
 
        <action name="eliminarInscripcion" class="controllers.EliminarInscripcionAction">
     <result name="success">/vista/exitoInscripcion.jsp</result>
-            <result name="error">/vista/exitoInscripcion.jsp</result>
-  
+            <result name="error">/vista/exitoInscripcion.jsp</result> 
+</action>
+       <action name="aprobarInscripcion" class="controllers.aprobarInscripcionAction">
+    <result name="success" type="redirectAction">
+                <param name="actionName">verEvento</param>
+                    <param name="namespace">/evento</param>
+            </result>
+            <result name="error">/vista/exitoInscripcion.jsp</result> 
 </action>
     </package>
 </struts>

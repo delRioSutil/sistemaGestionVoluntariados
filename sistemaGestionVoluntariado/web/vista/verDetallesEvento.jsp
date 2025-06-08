@@ -58,6 +58,64 @@
         </s:else>
 
         <br>
+        
+         <h2>Inscripciones Pendientes de Aprobación</h2>
+        <s:if test="inscripcionesNoAprobadas != null && !inscripcionesNoAprobadas.isEmpty()">
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>ID Inscripción</th>
+                        <th>Voluntario</th>
+                        <th>Fecha de inscripción</th>
+                        <th>Asistencia</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <s:iterator value="inscripcionesNoAprobadas" var="ins">
+                        <tr>
+                            <td><s:property value="#ins.inscripcionId" /></td>
+                            <td>
+                                <s:if test="#ins.voluntarioid != null">
+                                    <s:property value="#ins.voluntarioid.nombre" />
+                                </s:if>
+                                <s:else>
+                                    Desconocido
+                                </s:else>
+                            </td>
+                            <td><s:property value="#ins.fechainscripcion" /></td>
+                            <td>
+                                <s:if test="#ins.asistencia">
+                                    Sí
+                                </s:if>
+                                <s:else>
+                                    No
+                                </s:else>
+                            </td>
+                            <td>
+                                <s:form action="aprobarInscripcion" namespace="/inscripcion">
+                                    <s:hidden name="inscripcionId" value="%{#ins.inscripcionId}" />
+                                    <s:hidden name="eventoId" value="%{#ins.eventoid.eventoid}" />
+                                    <s:submit value="Aprobar" />
+                                </s:form>
+                            </td>
+                        </tr>
+                    </s:iterator>
+                </tbody>
+            </table>
+        </s:if>
+        <s:else>
+            <p>No hay inscripciones pendientes.</p>
+        </s:else>
+
+        
+        
+        
+        
+        
+        
+        <br>
+        
+        
 
         <s:form action="irACrearTarea" namespace="/tarea">
             <s:hidden name="eventoId" value="%{eventoId}" />

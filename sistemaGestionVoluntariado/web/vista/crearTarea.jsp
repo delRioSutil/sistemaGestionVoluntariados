@@ -9,10 +9,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="../css/estilos.css">
-       
-    </head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="../css/estilos.css">
     <title>Crear Tarea</title>
 </head>
 <body>
@@ -23,12 +21,18 @@
 
         <s:textfield name="nombre" label="Nombre de la tarea" />
         <s:textarea name="descripcion" label="Descripción" />
-        <s:textfield name="voluntarioId" label="ID del voluntario (opcional)" />
+
+        <s:label value="Selecciona un voluntario (opcional):" />
+        <s:select 
+            name="voluntarioId"
+            list="inscripcionesAprobadas"
+            listKey="voluntarioid.voluntarioId"
+            listValue="voluntarioid.nombre"
+            headerKey=""
+            headerValue="-- No asignar voluntario --"
+        />
 
         <s:submit value="Guardar tarea" />
-    </s:form>
-    <s:form action="mostrarOpcionesVoluntario" namespace="/voluntario">
-        <s:submit value="Volver a opciones" />
     </s:form>
 </body>
 </html>
