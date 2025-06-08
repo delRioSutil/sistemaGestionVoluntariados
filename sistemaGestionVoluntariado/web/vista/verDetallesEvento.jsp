@@ -10,6 +10,7 @@
 <html>
     <head>
         <title>Detalles del Evento</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="../css/estilos.css">
     </head>
     <body>

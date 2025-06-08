@@ -14,6 +14,7 @@ public class LoginVoluntarioAction extends ActionSupport implements SessionAware
     private String password;
     private Voluntario voluntario;
     private Map<String, Object> session;
+    private String mensaje;
 
     @Override
     public String execute() throws Exception {
@@ -24,7 +25,7 @@ public class LoginVoluntarioAction extends ActionSupport implements SessionAware
         try {
             Voluntario vol = client.find_XML(genericType, id);
             if (vol == null || !vol.getContrasenya().equals(passHash)) {
-                addActionError("Datos incorrectos.");
+                mensaje="Datos incorrectos.";
                 return ERROR;
             }
 
@@ -32,7 +33,7 @@ public class LoginVoluntarioAction extends ActionSupport implements SessionAware
             return SUCCESS;
 
         } catch (Exception e) {
-            addActionError("Error al iniciar sesión.");
+            mensaje="Error al iniciar sesión.";
             e.printStackTrace();
             return ERROR;
         }
@@ -61,4 +62,13 @@ public class LoginVoluntarioAction extends ActionSupport implements SessionAware
     public void setSession(Map<String, Object> session) {
         this.session = session;
     }
+
+    public String getMensaje() {
+        return mensaje;
+    }
+
+    public void setMensaje(String mensaje) {
+        this.mensaje = mensaje;
+    }
+    
 }

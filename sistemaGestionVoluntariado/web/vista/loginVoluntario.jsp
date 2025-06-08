@@ -22,5 +22,11 @@
             <s:password name="password" label="contraseña"></s:password>
             <s:submit value="Acceder"></s:submit>
         </s:form>
+        
+        <s:if test="mensaje != null">
+            <div style="color:red;">
+                <s:property value="mensaje" />
+            </div>
+        </s:if>
     </body>
 </html>

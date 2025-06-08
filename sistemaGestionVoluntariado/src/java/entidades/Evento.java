@@ -64,18 +64,18 @@ public class Evento implements Serializable {
     @Column(name = "fechafin")
     @Temporal(TemporalType.DATE)
     private Date fechafin;
-    @OneToMany(mappedBy = "eventoid")
+    @OneToMany(mappedBy = "eventoid", cascade = CascadeType.ALL, orphanRemoval = true)
     private Collection<Donacion> donacionCollection;
-    @OneToMany(mappedBy = "eventoid")
+    @OneToMany(mappedBy = "eventoid", cascade = CascadeType.ALL, orphanRemoval = true)
     private Collection<Tarea> tareaCollection;
     @JoinColumn(name = "organizacionid", referencedColumnName = "organizacionId")
     @ManyToOne
     private Organizacion organizacionid;
-    @OneToMany(mappedBy = "eventoid")
+    @OneToMany(mappedBy = "eventoid", cascade = CascadeType.ALL, orphanRemoval = true)
     private Collection<Inscripcion> inscripcionCollection;
-    @OneToMany(mappedBy = "eventoid")
+    @OneToMany(mappedBy = "eventoid", cascade = CascadeType.ALL, orphanRemoval = true)
     private Collection<Informe> informeCollection;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "evento")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "evento", orphanRemoval = true)
     private Collection<Valoracion> valoracionCollection;
 
     public Evento() {

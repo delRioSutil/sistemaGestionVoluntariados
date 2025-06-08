@@ -19,8 +19,8 @@
                 <param name="actionName">mostrarOpcionesVoluntario</param>
                     <param name="namespace">/voluntario</param>
             </result>
-            <result name="error">/voluntario/loginVoluntario.jsp</result>
-            <result name="input">/voluntario/loginVoluntario.jsp</result>
+            <result name="error">/vista/loginVoluntario.jsp</result>
+            <result name="input">/vista/loginVoluntario.jsp</result>
         </action>
         
         

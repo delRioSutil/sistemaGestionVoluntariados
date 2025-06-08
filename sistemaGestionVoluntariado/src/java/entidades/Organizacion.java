@@ -8,6 +8,7 @@ package entidades;
 import java.io.Serializable;
 import java.util.Collection;
 import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -50,7 +51,7 @@ public class Organizacion implements Serializable {
     @Size(max = 100)
     @Column(name = "contrasenya")
     private String contrasenya;
-    @OneToMany(mappedBy = "organizacionid")
+    @OneToMany(mappedBy = "organizacionid", cascade = CascadeType.ALL, orphanRemoval = true)
     private Collection<Evento> eventoCollection;
 
     public Organizacion() {
